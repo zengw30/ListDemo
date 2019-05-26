@@ -1,14 +1,9 @@
 package com.nd.frt.recentconversation;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.nd.frt.recentconversation.adapter.UserAdapter;
 import com.nd.frt.recentconversation.model.UserInfo;
@@ -24,9 +19,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         UserInfoService userInfoService = new UserInfoService();
         List<UserInfo> userInfos = userInfoService.getUserInfos(this);
-        UserAdapter userAdapter=new UserAdapter(userInfos);
-        RecyclerView recyclerView=(RecyclerView) findViewById(R.id.rvRecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
+        UserAdapter userAdapter = new UserAdapter(userInfos);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(userAdapter);
     }
 

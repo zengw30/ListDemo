@@ -30,13 +30,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater layoutInflater = LayoutInflater.from(viewGroup.getContext());
         View inflate = layoutInflater.inflate(R.layout.item_user, viewGroup, false);
-        Log.e(TAG,"onCreateViewHolder");
+        Log.d(TAG,"onCreateViewHolder");
         return new UserViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder userViewHolder, int position) {
-        Log.e(TAG,"onBindViewHolder");
+        Log.d(TAG,"onBindViewHolder");
         final UserInfo userInfo = mUserInfos.get(position);
         Glide.with(userViewHolder.mIvAvatar).load(userInfo.avatarUrl).into(userViewHolder.mIvAvatar);
         userViewHolder.mTvUserName.setText(userInfo.userName);
